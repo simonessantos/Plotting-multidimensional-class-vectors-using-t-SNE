@@ -25,7 +25,6 @@ import argparse
 you can now run the python scrypt with the following command:
 
 ```sh
-generation of cifar10 examples, 5k img by classe
 python3 main.py  --dataroot ${'path file str'}
 ```
 
