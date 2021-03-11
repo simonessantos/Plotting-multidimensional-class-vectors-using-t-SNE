@@ -5,3 +5,27 @@
 ![N|Solid](https://github.com/henriqueburis/Plotting-multidimensional-class-vectors-using-t-SNE/blob/main/figure/cifar100-3download%20(2).png?raw=true)
 ![N|Solid](https://github.com/henriqueburis/Plotting-multidimensional-class-vectors-using-t-SNE/blob/main/figure/cifar100-2download%20(2).png?raw=true)
 ![N|Solid](https://github.com/henriqueburis/Plotting-multidimensional-class-vectors-using-t-SNE/blob/main/figure/cifar100download%20(2).png?raw=true)
+
+## Installation
+from sklearn.datasets import load_files
+from keras.preprocessing.image import img_to_array
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import LabelEncoder
+from sklearn import preprocessing
+from sklearn import decomposition
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib.patheffects as PathEffects
+import numpy as np
+import cv2
+import argparse
+
+## Using the t-SNE
+you can now run the python scrypt with the following command:
+
+```sh
+generation of cifar10 examples, 5k img by classe
+python3 main.py  --dataroot ${'path file str'}
+```
+
