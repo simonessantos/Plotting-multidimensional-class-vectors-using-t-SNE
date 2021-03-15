@@ -13,13 +13,13 @@ import cv2
 import argparse
 
 
-#parser = argparse.ArgumentParser(description='TSN')
-#parser.add_argument('--dataroot',type=str,required=True,
- #                   help='path of data')
-#args = parser.parse_args()
+parser = argparse.ArgumentParser(description='TSN')
+parser.add_argument('--dataroot',type=str,required=True,
+                    help='path of data')
+args = parser.parse_args()
 
-pathfile = "/content/CIFAR10-MIXUP/CIFAR10-00199-MSGAN+ECE_filtered_LOW_ENTROPY_1e-2+TRA+DA"
-data = load_files(pathfile,random_state=0, load_content=True)
+#pathfile = "/content/CIFAR10-MIXUP/CIFAR10-00199-MSGAN+ECE_filtered_LOW_ENTROPY_1e-2+TRA+DA"
+data = load_files(args.dataroot,random_state=0, load_content=True)
 
 raw_data = []
 raw_labels = list()
@@ -116,6 +116,7 @@ images = data.reshape(data.shape[0], 28, 28,3)
 pca = decomposition.PCA(n_components=2)
 view = pca.fit_transform(data)
 plt.scatter(view[:,0], view[:,1], c=labels, alpha=0.2, cmap='Set1')
+plt.show()
 
 #kmeans
 kmeans = KMeans(n_clusters=kmeans_cluster, random_state=0).fit(data)
@@ -129,6 +130,8 @@ plt.figure(figsize=(20,10))
 plt.scatter(view[:,0], view[:,1], c=labels, alpha=0.5)
 plt.xlabel('t-SNE-1')
 plt.ylabel('t-SNE-2')
+plt.show()
 
 #scatter(view, Y)
 scatter_2(view, Label_mcat)
+#plt.savefig('digits_tsne-generated_18_cluster.png', dpi=120)
